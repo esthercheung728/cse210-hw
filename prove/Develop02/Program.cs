@@ -6,12 +6,11 @@ class Program
     static void Main(string[] args)
     {
         Journal theJournal = new Journal();
-        // Entry anEntry = new Entry();
         bool isRunning = true;
 
         while (isRunning)
         {
-            Console.WriteLine("Welcome to the Journal Program!");
+            Console.WriteLine("\n Welcome to the Journal Program!");
             Console.WriteLine("Journal App Menu:");
             Console.WriteLine("Please select one of the following choices: ");
             Console.WriteLine("1. Write a new entry");
@@ -83,7 +82,6 @@ class Program
                     Console.WriteLine();
                     break;
 
-                // Display the count of entries
                 // Display the count of entries
                 case 6:
                     int count = theJournal.EntriesCount();
