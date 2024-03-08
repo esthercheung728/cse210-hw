@@ -27,8 +27,6 @@ public class Journal
 
     public void SaveToFile(string filename)
     {
-        // Console.Write("Enter Filename: ");
-        // string filename = Console.ReadLine();
 
         using (StreamWriter outputFile = new StreamWriter(filename, true))
         {

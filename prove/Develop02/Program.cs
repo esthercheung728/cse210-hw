@@ -10,6 +10,7 @@ class Program
 
         while (isRunning)
         {
+            // Display the menu
             Console.WriteLine("\n Welcome to the Journal Program!");
             Console.WriteLine("Journal App Menu:");
             Console.WriteLine("Please select one of the following choices: ");
@@ -21,6 +22,7 @@ class Program
             Console.WriteLine("6. Display the count of entries");
             Console.WriteLine("7. Quit");
 
+            // Reading the user's choice
             Console.Write("What would you like to do? Please select an option (1-7): ");
             int choice = int.Parse(Console.ReadLine());
             Console.WriteLine();
@@ -33,18 +35,10 @@ class Program
                     Console.WriteLine();
                     break;
 
-                // string prompt = PromptGenerator.GetRandomPrompt();
-                // Console.WriteLine($"Prompt: {prompt}");
-                // Console.Write("Enter your response: ");
-                // string response = Console.ReadLine();
-                // journal.AddEntry(prompt, response);
-                // break;
 
                 // Display the journal
                 case 2:
-                    // theJournal.DisplayAll();
-                    // Console.WriteLine();
-                    // break;
+
 
                     if (theJournal.EntriesCount() == 0)
                     {
