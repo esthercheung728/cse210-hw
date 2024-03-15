@@ -27,14 +27,14 @@ public class Fraction
     public string GetFractionString()
     {
 
-        string text = $"{_top}/{_botton}";
-        return text;
+        string amount = $"{_top}/{_botton}";
+        return amount;
     }
 
     public double GetDecimalValue()
     {
 
-        return (double)_top / (double)_botton;
+        return (double)_top / _botton;
     }
 
 }
