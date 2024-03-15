@@ -5,8 +5,10 @@ class Program
 {
     static void Main(string[] args)
     {
+        // Collect the scripture
         ScriptureLibrary library = new ScriptureLibrary();
 
+        // Add scripture to library
         library.AddScripture(new Reference("John", 3, 16), "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.");
         library.AddScripture(new Reference("Proverbs", 3, 5, 6), "5 Trust in the Lord with all your heart and lean not on your own understanding; 6 in all your ways submit to him, and he will make your paths straight.");
         library.AddScripture(new Reference("Nephi", 3, 7), "And it came to pass that I, Nephi, said unto my father: I will go and do the things which the Lord hath commanded, for I know that the Lord giveth no commandments unto the children of men, save he shall prepare a way for them that they may accomplish the thing which he commandeth them.");
@@ -14,11 +16,14 @@ class Program
         library.AddScripture(new Reference("Matthew", 11, 28), "Come to me, all you who are weary and burdened, and I will give you rest.");
         library.AddScripture(new Reference("Philippians", 4, 13), "I can do all things through Christ who strengthens me.");
 
+        // Set loop for program
         while (true)
         {
+            // Random select the scripture
             Console.Clear();
             Scripture scripture = library.SelectRandomScripture();
 
+            // if scripture is not null, hide the word
             if (scripture != null)
             {
                 bool memorized = false;
@@ -28,6 +33,7 @@ class Program
                     Console.Clear();
                     Console.WriteLine(scripture.RenderScripture());
 
+                    // User select option (hide word or quit)
                     Console.Write("Press Enter to hide a word or type 'quit' to exit: ");
                     string input = Console.ReadLine();
 
@@ -36,6 +42,7 @@ class Program
 
                     scripture.HideRandom();
 
+                    // Check hidden all the word or not
                     if (scripture.IsCompletelyHidden())
                     {
                         memorized = true;
@@ -43,6 +50,7 @@ class Program
                     }
                 }
 
+                // Display msg for user when complete memorized the full scripture
                 if (memorized)
                 {
                     Console.Clear();
@@ -53,6 +61,7 @@ class Program
             }
             else
             {
+                // if (library.IsEmpty())
                 Console.WriteLine("The scripture library is empty. Add scriptures or load them from files.");
                 Console.WriteLine("Press Enter to exit.");
                 Console.ReadLine();
